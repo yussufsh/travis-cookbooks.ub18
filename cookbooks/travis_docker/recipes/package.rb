@@ -52,3 +52,12 @@ apt_repository 'docker' do
   action :remove
   not_if { node['travis_build_environment']['docker']['keep_repo'] }
 end
+
+service 'docker' do
+  action [ :stop, :start ]
+end
+cookbook_file '/etc/docker/daemon.json' do
+  source 'etc/default/daemon.json'
+  owner 'root'
+  group 'root'
+  mode 0o640
