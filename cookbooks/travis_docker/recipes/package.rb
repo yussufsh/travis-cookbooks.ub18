@@ -61,3 +61,4 @@ cookbook_file '/etc/docker/daemon.json' do
   owner 'root'
   group 'root'
   mode 0o640
+end
