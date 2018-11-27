@@ -87,6 +87,7 @@ node['travis_build_environment']['pythons'].each do |py|
     group 'root'
     mode 0o644
     ignore_failure true
+    not_if { node['kernel']['machine'] == 'ppc64le' }
   end
 
   bash "extract #{downloaded_tarball}" do

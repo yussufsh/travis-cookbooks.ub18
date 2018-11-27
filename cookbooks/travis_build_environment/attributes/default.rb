@@ -76,17 +76,13 @@ default['travis_build_environment']['pyenv_revision'] = 'v1.1.5'
 # For the list of supported aliases, see:
 # https://github.com/pyenv/pyenv/tree/master/plugins/python-build/share/python-build
 default['travis_build_environment']['pythons'] = %w[
-  2.7.14
-  3.6.3
-  pypy2.7-5.8.0
-  pypy3.5-5.8.0
+  2.7.15
+  3.6.7
 ]
 
 default['travis_build_environment']['python_aliases'] = {
-  '2.7.14' => %w[2.7],
-  '3.6.3' => %w[3.6],
-  'pypy2.7-5.8.0' => %w[pypy],
-  'pypy3.5-5.8.0' => %w[pypy3]
+  '2.7.15' => %w[2.7],
+  '3.6.7' => %w[3.6],
 }
 
 default['travis_build_environment']['pip']['packages'] = {

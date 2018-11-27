@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+if node['kernel']['machine'] != 'ppc64le'
 apt_repository 'couchdb' do
   uri 'ppa:couchdb/stable'
   not_if { node['kernel']['machine'] == 'ppc64le' }
@@ -28,4 +28,5 @@ end
 apt_repository 'couchdb' do
   action :remove
   not_if { node['travis_build_environment']['couchdb']['keep_repo'] }
+end
 end
