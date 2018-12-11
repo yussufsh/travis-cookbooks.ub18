@@ -102,7 +102,7 @@ if node['kernel']['machine'] == "ppc64le"
 end
 
 execute "Do some sed for Power Ubuntu 18.04" do
-    command "sed -i 's/${_system_version}/16.04/g' scripts/functions/utility_system"
+	command "sed -i 's/${_system_version}/16.04/g' /home/travis/.rvm/scripts/functions/utility_system"
     action :run
 end
 
