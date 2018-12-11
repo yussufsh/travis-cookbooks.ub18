@@ -102,7 +102,7 @@ if node['kernel']['machine'] == "ppc64le"
 end
 
 package %w[
-  libssl1.0
+  libssl1.0.0
   libssl1.0-dev
 ] do
   action %i[install upgrade]
