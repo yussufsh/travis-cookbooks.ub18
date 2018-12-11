@@ -101,6 +101,11 @@ if node['kernel']['machine'] == "ppc64le"
   install_flag = "--autolibs=disable --fuzzy"
 end
 
+execute "Do some sed for Power Ubuntu 18.04" do
+    command "sed -i 's/${_system_version}/16.04/g' scripts/functions/utility_system"
+    action :run
+end
+
 bash "install default ruby #{node['travis_build_environment']['default_ruby']}" do
   code %W[
     #{rvm_script_path} install
