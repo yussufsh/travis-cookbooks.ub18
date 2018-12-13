@@ -116,18 +116,12 @@ default['travis_build_environment']['elixir_versions'] = %w[
 default['travis_build_environment']['required_otp_release_for']['1.7.4'] = '21.1'
 default['travis_build_environment']['default_elixir_version'] = '1.7.4'
 default['travis_build_environment']['mysql']['socket'] = '/var/run/mysqld/mysqld.sock'
-default['travis_build_environment']['packer_url'] = \
-  'https://releases.hashicorp.com/packer/1.3.2/packer_1.3.2_linux_amd64.zip'
-default['travis_build_environment']['packer_checksum'] = \
-  '5e51808299135fee7a2e664b09f401b5712b5ef18bd4bad5bc50f4dcd8b149a1'
-default['travis_build_environment']['packer_version'] = '1.3.2'
-if node['kernel']['machine'] == 'ppc64le'
-  default['travis_build_environment']['packer_version'] = '1.3.2'
-  default['travis_build_environment']['packer_url'] = \
-    'https://releases.hashicorp.com/packer/1.3.2/packer_1.3.2_linux_ppc64le.zip'
-  default['travis_build_environment']['packer_checksum'] = \
-    'f3a2aec3a0a54d5d9cc6047f52acb73202b30efea770d4627459ca5608e58ac1'
-end
+default['travis_build_environment']['packer']['amd64']['version'] = '1.3.3'
+default['travis_build_environment']['packer']['amd64']['checksum'] = \
+  '2e3ea8f366d676d6572ead7e0c773158dfea0aed9c6a740c669d447bcb48d65f'
+default['travis_build_environment']['packer']['ppc64le']['version'] = '1.3.3'
+default['travis_build_environment']['packer']['ppc64le']['checksum'] = \
+  '4b8bc93a2bf406fb035968815c680f171830ff7246de9594c08a15ac0c9a18d8'
 default['travis_build_environment']['packer_binaries'] = %w[packer]
 default['travis_build_environment']['ramfs_dir'] = '/var/ramfs'
 default['travis_build_environment']['ramfs_size'] = '768m'
@@ -236,6 +230,7 @@ default['travis_build_environment']['lein_url'] = 'https://raw.githubusercontent
 
 default['travis_build_environment']['sysctl_kernel_shmmax'] = 45_794_432
 default['travis_build_environment']['sysctl_disable_ipv6'] = true
+default['travis_build_environment']['sysctl_enable_ipv4_forwarding'] = true
 
 maven_version = '3.5.4'
 default['travis_build_environment']['maven_version'] = maven_version
@@ -271,8 +266,8 @@ default['travis_build_environment']['shellcheck_version'] = '0.6.0'
 default['travis_build_environment']['shellcheck_checksum'] = '95c7d6e8320d285a9f026b5241f48f1c02d225a1b08908660e8b84e58e9c7dce'
 default['travis_build_environment']['shellcheck_binaries'] = %w[shellcheck]
 
-default['travis_build_environment']['shfmt_url'] = 'https://github.com/mvdan/sh/releases/download/v2.6.0/shfmt_v2.6.0_linux_amd64'
-default['travis_build_environment']['shfmt_checksum'] = 'e582c3417f1b773598c219683a98cc1ce444ca04aef1fa8457c378ad00316b29'
+default['travis_build_environment']['shfmt_url'] = 'https://github.com/mvdan/sh/releases/download/v2.6.2/shfmt_v2.6.2_linux_amd64'
+default['travis_build_environment']['shfmt_checksum'] = 'bdf8e832a903a80806b93a9ad80d8f95a70966fbec3258a565ed5edc2ae5bcdc'
 
 default['travis_build_environment']['yarn_url'] = 'https://yarnpkg.com/latest.tar.gz'
 default['travis_build_environment']['yarn_version'] = 'latest'
