@@ -6,7 +6,7 @@ end
 
 package %w[redis-server] do
   action :install
-  ignore_failure :true
+  ignore_failure true
 end
 
 package %w[redis-tools] do
