@@ -4,7 +4,12 @@ apt_repository 'ppa:redis-server' do
   uri 'ppa:chris-lea/redis-server'
 end
 
-package %w[redis-server redis-tools] do
+package %w[redis-server] do
+  action :install
+  ignore_failure :true
+end
+
+package %w[redis-tools] do
   action :install
 end
 
