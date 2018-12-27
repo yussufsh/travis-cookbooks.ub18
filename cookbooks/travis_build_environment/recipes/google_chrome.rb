@@ -20,3 +20,11 @@ apt_repository 'google-chrome' do
   not_if { node['travis_build_environment']['google_chrome']['keep_repo'] }
   not_if { node['kernel']['machine'] == 'ppc64le' }
 end
+
+ruby_block 'job_board adjustments google-chrome ppc64le' do
+  only_if { node['kernel']['machine'] == 'ppc64le' }
+  block do
+    features = node['travis_packer_templates']['job_board']['features'] - ['google-chrome']
+    node.override['travis_packer_templates']['job_board']['features'] = features
+  end
+end
